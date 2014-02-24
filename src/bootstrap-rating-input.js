@@ -7,15 +7,15 @@
     // A private function to highlight a star corresponding to a given value
     function _paintValue(ratingInput, value) {
       var selectedStar = $(ratingInput).find('[data-value=' + value + ']');
-      selectedStar.removeClass('glyphicon-star-empty').addClass('glyphicon-star');
-      selectedStar.prevAll('[data-value]').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
-      selectedStar.nextAll('[data-value]').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+      selectedStar.removeClass('icon-star-empty').addClass('icon-star');
+      selectedStar.prevAll('[data-value]').removeClass('icon-star-empty').addClass('icon-star');
+      selectedStar.nextAll('[data-value]').removeClass('icon-star').addClass('icon-star-empty');
     }
 
     // A private function to remove the highlight for a selected rating
     function _clearValue(ratingInput) {
       var self = $(ratingInput);
-      self.find('[data-value]').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+      self.find('[data-value]').removeClass('icon-star').addClass('icon-star-empty');
     }
 
     // A private function to change the actual value to the hidden field
@@ -42,13 +42,13 @@
       // HTML element construction
       for (i = min; i <= max; i++) {
         // Create <max> empty stars
-        stars += ['<span class="glyphicon glyphicon-star-empty" data-value="', i, '"></span>'].join('');
+        stars += ['<span class="icon-star-empty" data-value="', i, '"></span>'].join('');
       }
       // Add a clear link if clearable option is set
       if (clearable) {
         stars += [
           ' <a class="rating-clear" style="display:none;" href="javascript:void">',
-          '<span class="glyphicon glyphicon-remove"></span> ',
+          '<span class="icon-remove"></span> ',
           clearable,
           '</a>'].join('');
       }
@@ -134,3 +134,4 @@
   });
 
 }(jQuery));
+
